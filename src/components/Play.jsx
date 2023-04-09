@@ -58,13 +58,12 @@ const Play = ({ category = 9, totalQuestions, difficulty }) => {
       let ovSC = JSON.parse(localStorage.getItem("score")) + score[0];      
       var ovQA;
       if(JSON.parse(localStorage.getItem("queAttempted")) !== null){
-        ovQA =  parseInt(JSON.parse(localStorage.getItem("queAttempted"))) + score[1]
+        ovQA =  Number(JSON.parse(localStorage.getItem("queAttempted"))) + Number(score[1])
         setOverallscore([ovSC, ovQA]);
-        console.log('here')
+        
       }else{
-        ovQA = score[1]        
+        ovQA = Number(score[1]);
         setOverallscore([ovSC, ovQA]);
-        console.log('there')
       }      
       localStorage.setItem("score", JSON.stringify(ovSC));
       localStorage.setItem("queAttempted", JSON.stringify(ovQA));
