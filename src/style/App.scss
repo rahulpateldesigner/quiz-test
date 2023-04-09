@@ -1,0 +1,27 @@
+@import "_colors.scss";
+
+body{ background:  url('./../assets/images/quiz-bg.jpg') no-repeat center right $yellow; background-size: contain;}
+
+#homepage{
+  .quizeBox{width: 450px;}
+  
+}
+#quizPage{
+  flex-direction: column;
+  .quizeBox{width: 800px;}
+  .btnOverlay {position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: not-allowed; display: none;}
+  .scoreBadge {position: absolute;top: 3rem;right: 32px;}
+  .correctAnd {position: fixed;bottom: 0;left: 0;z-index: 5;}
+}
+
+.logoWrap{ min-height: 250px;}
+.centerAlignWrap{display: flex; min-height: 96vh; padding: 2vh 0; align-items: center;justify-content: center; }
+.quizeBox{ background-color:$light; color: $dark; border-radius: 1rem; padding: 2rem;max-width: 96%; word-wrap: break-word;}
+.fullCta{ width: 100%;}
+button.btn{border-radius: 2rem;}
+
+@media (max-width: 576px) {
+.xs-full{ width: 100%;}
+#quizPage .scoreBadge {position: relative;top: inherit;right: inherit;}
+.correctAnd{display: none;}
+}
